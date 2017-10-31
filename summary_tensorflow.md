@@ -8,13 +8,9 @@ In recent years, machine learning has driven advances in many different fields d
 
 ## Hypothesis
 
-Advanced users sought for flexibility including:
+Advanced users sought for flexibility including: 1. Defining new layers; 2. Refining the training algorithms; and 3. Defining new training algorithms.
 
-1. Defining new layers
-
-2. Refining the training algorithms
-
-3. Defining new training algorithms
+Many users want to hone their model locally on a GPU-powered workstation, before scaling the same code to train on a much larger dataset. After training a model on a cluster, the next step is to push the model into production. These tasks has some common computational structure, but it is necessary to use or create separate systems that satisfy the different performance and resource requirements of each platform.
 
 ## Solution Overview
 
