@@ -1,5 +1,5 @@
-# Summary of "PAPER_NAME"
-STUDENT1\_NAME (UNIQNAME), STUDENT2\_NAME (UNIQNAME), STUDENT3\_NAME (UNIQNAME), 
+# Summary of "TensorFlow: A system for large-scale machine learning"
+Boyu Tian (bytian), Rui Liu (ruixliu), Haojun Ma (mahaojun) 
 
 ## Problem and Motivation
 
