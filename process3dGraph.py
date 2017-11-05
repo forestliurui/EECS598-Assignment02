@@ -1,17 +1,19 @@
 #coding:utf-8
 import psutil
+import matplotlib
+matplotlib.use('Agg')
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-TIME_NUM = 90
-FRAMES = 360
+TIME_NUM = 90000
+FRAMES = 360000
 
 class processMoniter:
     def  __init__(self, pids):
-        self.cpu_nums = psutil.NUM_CPUS
-        self.max_mem = psutil.TOTAL_PHYMEM
+        self.cpu_nums = psutil.cpu_count()
+        self.max_mem = psutil.virtual_memory().total
 
         self.plist = [psutil.Process(pid) for pid in pids]
 
@@ -20,13 +22,13 @@ class processMoniter:
 
     def get_system_info(self):
         cpu_percent = psutil.cpu_percent(interval=0.0, percpu=False)
-        mem_percent = float(psutil.used_phymem()) / self.max_mem * 100
+        mem_percent = float(psutil.virtual_memory().used) / self.max_mem * 100
         return cpu_percent, mem_percent
 
     def get_process_info(self, p):
         if p.is_running:
-            cpu_percent = p.get_cpu_percent(interval=0.0) / self.cpu_nums
-            mem_percent = p.get_memory_percent()
+            cpu_percent = p.cpu_percent(interval=0.0) / self.cpu_nums
+            mem_percent = p.memory_percent()
         else:
             cpu_percent = 0.0
             mem_percent = 0.0
@@ -101,6 +103,7 @@ class processGraph:
         sysline, = ax.plot(sysUsage.mem_usage, sysUsage.times,
                     zs=np.array(sysUsage.cpu_usage), zdir='z', label='zs=0, zdir=z')
         sysline.set_label('System')
+        import pdb;pdb.set_trace()
 
         # Processes
         pUsages = {}
@@ -120,7 +123,8 @@ class processGraph:
         line_ani = animation.FuncAnimation(fig, self.update_lines, FRAMES,
                                         fargs=(sysline, sysUsage, pLines, pUsages, ax),
                                         interval=100, blit=False)
-        plt.show()
+        #plt.show()
+        plt.savefig("tmp_fig.pdf")
         #line_ani.save('im.mp4')
 
 
