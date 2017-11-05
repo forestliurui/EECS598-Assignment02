@@ -55,7 +55,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
 
         global_step = builder.ensure_global_step()
         train_op = train(total_loss, global_step, total_num_examples)
-    import pdb;pdb.set_trace()
+    #import pdb;pdb.set_trace()
     return net, logits, total_loss, train_op, global_step
 
 

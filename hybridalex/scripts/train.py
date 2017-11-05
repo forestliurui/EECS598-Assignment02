@@ -21,7 +21,7 @@ from ..utils import misc
 net_configs = {
     '1dev': (attrgetter('original'),
              ['/job:worker/task:0'],
-             'grpc://localhost:2222', 4, 96),
+             'grpc://localhost:2222', 1, 96),
     '2dev-data': (attrgetter('ndev_data'),
                   ['/job:worker/task:0', '/job:worker/task:1',
                    '/job:ps/task:0'],
