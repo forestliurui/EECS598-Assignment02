@@ -32,7 +32,7 @@ net_configs = {
                    '/job:worker/task:2', '/job:worker/task:3',
                    '/job:ps/task:0'],
                   'grpc://localhost:2222',
-                  4, 96)
+                  4, 24)
 }
 
 net_names = {
