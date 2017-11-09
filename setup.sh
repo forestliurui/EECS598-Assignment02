@@ -10,9 +10,8 @@ sudo apt-get update
 sudo apt-get install -y screen python-pip python-dev vim
 sudo pip install --upgrade pip
 sudo pip install tensorflow
-git clone https://github.com/forestliurui/EECS598-Assignment02.git
 cp -r /proj/michigan-bigdata-PG0/assignments/assignment2/* .
 EOF
-scp startserver.py ${username}@${server}:~
+scp -r "../EECS598-Assignment02" ${username}@${server}:~
 
 done
