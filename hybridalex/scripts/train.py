@@ -204,10 +204,10 @@ def train(net_configname, network_name, batch_size, devices=None, target=None,
                 sys.stdout.flush()
 
                 # Save the model checkpoint periodically.
-                if step % 100 == 0 or (step + 1) == batch_num:
+                #if step % 100 == 0 or (step + 1) == batch_num:
                 #if (step+1) % 2 == 0 or step % 100 == 0 or (step + 1) == batch_num:
-                    checkpoint_path = os.path.join(train_dir, 'model-{}.ckpt'.format(step))
-                    saver.save(sess, checkpoint_path, write_meta_graph=True)
+                checkpoint_path = os.path.join(train_dir, 'model-{}.ckpt'.format(step))
+                saver.save(sess, checkpoint_path, write_meta_graph=True)
 
             # When done, ask the threads to stop.
             coord.request_stop()
