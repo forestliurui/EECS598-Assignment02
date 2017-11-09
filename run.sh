@@ -1,7 +1,7 @@
 rm cpu
 rm mem
 $1 &
-pid=$!
+pid=$2
 echo $pid
 while true; do
     ./calcCPU.sh $pid >> cpu &
