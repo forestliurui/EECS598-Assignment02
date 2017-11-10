@@ -29,7 +29,7 @@ def original(images, labels, num_classes, total_num_examples, devices=None, is_t
 
 
 def ndev_data(images, labels, num_classes, total_num_examples, devices, is_train=True):
-    def train(replica_grads, global_step, opt):
+    def train(replica_grads, global_step, opt, builder):
 
         average_grads = builder.average_gradients(replica_grads)
         apply_gradient_op = opt.apply_gradients(average_grads, global_step=global_step)
@@ -60,7 +60,7 @@ def ndev_data(images, labels, num_classes, total_num_examples, devices, is_train
               with tf.control_dependencies([total_loss]):
                        replica_grads.append( opt.compute_gradients(total_loss) )
     with tf.device(devices[-1]):
-         train_op = train(replica_grads, global_step, opt)
+         train_op = train(replica_grads, global_step, opt, builder)
          net_stack = tf.stack(replica_net)
          net = tf.reduce_mean(net_stack, 0)
          logits_stack = tf.stack(replica_logits)
