@@ -49,11 +49,13 @@ def ndev_data(images, labels, num_classes, total_num_examples, devices, is_train
     replica_net = []
     replica_logits = []
     replica_total_loss = []
-
+    #import pdb;pdb.set_trace()
     with tf.variable_scope("foo", reuse=tf.AUTO_REUSE):
-      for i in range(len(devices[:-1])):
-        with tf.device(devices[i]):
-              net, logits, total_loss = vgg_inference(builder, replica_images[i], replica_labels[i], num_classes)
+      with tf.name_scope(''):
+       for i in range(len(devices[:-1])):
+        with tf.name_scope('tower_{}'.format(i)) as scope:
+           with tf.device(devices[i]):
+              net, logits, total_loss = vgg_inference(builder, replica_images[i], replica_labels[i], num_classes, scope)
               replica_net.append(net)
               replica_logits.append(logits)
               replica_total_loss.append(total_loss)
