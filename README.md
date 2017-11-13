@@ -1,8 +1,8 @@
 # EECS598-Assignment02
 ### Q1
 469s
-![architecture](./plots/cpu_q1)
-![architecture](./plots/mem_q1)
+![architecture](./plots/cpu_q1.png)
+![architecture](./plots/mem_q1.png)
 
 ### Q2
 521s
