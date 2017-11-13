@@ -8,9 +8,10 @@ Comparing with Q1, checkpointing cost some time..
 
 ### Q3
 453s
-Comparing with Q1, this experiment ran a little faster. I think it is because they have the same amount of data but Q3 only have 48 batches, which saved some time in applying the gradients.
+Comparing with Q1, this experiment ran a little faster. I think it is because they have the same amount of data but Q3 only have 48 batches, which is smaller than Q1 and saved some time in applying the gradients. At the same time, the size of each batch increased, which resulted a longer time for each batch.
 
 ### Q5
+All plots are like cpu_vgg_q* and mem_vgg_q*
 #### 1
 3857s
 
@@ -31,3 +32,6 @@ We kept 96 batches and modified batch size in each worker to 32. It is also fast
 ### Q8
 1053s
 We use similar parameter with Q7. For similar reason, it is faster than Q5 but it is not as fast as 4 times.
+
+### Q9
+About 100 hours.
