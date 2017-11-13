@@ -42,7 +42,7 @@ Comparing with Q1, this experiment ran a little faster. I think it is because th
 ### Q6
 285s
 
-We kept 96 batches and modified batch size in each worker to 64. Thus, a batch have the same amount of data to train. In this case, it is faster than Q1. However, as there are some overhead about communication, spliting data and computing the average gradients, it can not be 2 times faster.
+We kept 96 batches and modified batch size in each worker to 64. Thus, a batch have the same amount of data to train. In this case, it is faster than Q1. However, as there are some overhead about communication, spliting data and computing the average gradients, it can not be 2X faster.
 ![architecture](./plots/cpu_q6.png)
 ![architecture](./plots/mem_q6.png)
 ![architecture](./fig/tensorboard_q6.png)
@@ -50,7 +50,7 @@ We kept 96 batches and modified batch size in each worker to 64. Thus, a batch h
 ### Q7
 185s
 
-We kept 96 batches and modified batch size in each worker to 32. It is also faster than Q1. For similar reason, it can not be 4 times faster.
+We kept 96 batches and modified batch size in each worker to 32. It is also faster than Q1. For similar reason, it can not be 4X faster.
 ![architecture](./plots/cpu_q7.png)
 ![architecture](./plots/mem_q7.png)
 ![architecture](./fig/tensorboard_q7.png)
@@ -58,7 +58,7 @@ We kept 96 batches and modified batch size in each worker to 32. It is also fast
 ### Q8
 1053s
 
-We use similar parameter with Q7. For similar reason, it is faster than Q5 but it is not as fast as 4 times.
+We use similar parameter with Q7. For similar reason, it is faster than Q5 but it is not as fast as 4X.
 ![architecture](./plots/cpu_q8.png)
 ![architecture](./plots/mem_q8.png)
 ![architecture](./fig/tensorboard_q8.png)
