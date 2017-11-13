@@ -42,7 +42,7 @@ Comparing with Q1, this experiment ran a little faster. I think it is because th
 ### Q6
 285s
 
-We kept 96 batches and modified batch size in each worker to 64. Thus, a batch have the same amount of data to train. In this case, it is faster than Q1. However, as there are some overhead about spliting data and computing the average gradients, it can not be 2 times faster.
+We kept 96 batches and modified batch size in each worker to 64. Thus, a batch have the same amount of data to train. In this case, it is faster than Q1. However, as there are some overhead about communication, spliting data and computing the average gradients, it can not be 2 times faster.
 ![architecture](./plots/cpu_q6.png)
 ![architecture](./plots/mem_q6.png)
 ![architecture](./fig/tensorboard_q6.png)
