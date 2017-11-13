@@ -64,5 +64,5 @@ We use similar parameter with Q7. For similar reason as previous question, it is
 ![architecture](./fig/tensorboard_q8.png)
 
 ### Q9
-About 100 hours.
+About 50 hours.
 
