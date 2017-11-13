@@ -20,22 +20,22 @@ Comparing with Q1, this experiment ran a little faster. I think it is because th
 ![architecture](./fig/tensorboard_q4.png)
 
 ### Q5
-#### 1
+#### Repeating 1
 3857s
 ![architecture](./plots/cpu_vgg_q1.png)
 ![architecture](./plots/mem_vgg_q1.png)
 
-#### 2
+#### Repeating 2
 3963s
 ![architecture](./plots/cpu_vgg_q2.png)
 ![architecture](./plots/mem_vgg_q2.png)
 
-#### 3
+#### Repeating 3
 3811s
 ![architecture](./plots/cpu_vgg_q3.png)
 ![architecture](./plots/mem_vgg_q3.png)
 
-#### 4
+#### Repeating 4
 ![architecture](./fig/tensorboard_q5.png)
 
 ### Q6
