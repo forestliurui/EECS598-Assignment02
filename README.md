@@ -21,22 +21,22 @@ Comparing with Q1, this experiment ran a little faster. I think it is because th
 ![architecture](./fig/tensorboard_q4.png)
 
 ### Q5
-#### Repeating Q1
+#### Repeating Q1 for VggNet
 3857s
 ![architecture](./plots/cpu_vgg_q1.png)
 ![architecture](./plots/mem_vgg_q1.png)
 
-#### Repeating Q2
+#### Repeating Q2 for VggNet
 3963s
 ![architecture](./plots/cpu_vgg_q2.png)
 ![architecture](./plots/mem_vgg_q2.png)
 
-#### Repeating Q3
+#### Repeating Q3 for VggNet
 3811s
 ![architecture](./plots/cpu_vgg_q3.png)
 ![architecture](./plots/mem_vgg_q3.png)
 
-#### Repeating Q4
+#### Repeating Q4 for VggNet
 ![architecture](./fig/tensorboard_q5.png)
 
 ### Q6
@@ -65,6 +65,4 @@ We use similar parameter with Q7. For similar reason, it is faster than Q5 but i
 
 ### Q9
 About 100 hours.
-![architecture](./plots/cpu_q9.png)
-![architecture](./plots/mem_q9.png)
-![architecture](./fig/tensorboard_q9.png)
+
