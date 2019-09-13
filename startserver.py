@@ -28,6 +28,15 @@ clusterSpec_2proc = tf.train.ClusterSpec({
     ]
 })
 
+clusterSpec_2dev_2proc = tf.train.ClusterSpec({
+    "ps": [
+        "salat0:2222"
+    ],
+    "worker": [
+        "salat1:2223",
+        "salat1:2224"
+    ]
+})
 clusterSpec_cluster = tf.train.ClusterSpec({
     "ps" : [
         "node-0:2222"
@@ -53,6 +62,7 @@ clusterSpec_cluster2 = tf.train.ClusterSpec({
 clusterSpec = {
     "single": clusterSpec_single,
     '1dev-2proc': clusterSpec_2proc,
+    '2dev-2proc': clusterSpec_2dev_2proc,
     "cluster": clusterSpec_cluster,
     "cluster2": clusterSpec_cluster2
 }
