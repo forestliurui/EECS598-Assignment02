@@ -1,6 +1,10 @@
 """
 A simple script to start tensorflow servers with different roles.
 """
+import os
+os.enrivon.pop('http_proxy')
+os.enrivon.pop('https_proxy')
+
 import tensorflow as tf
 
 # define the command line flags that can be sent
