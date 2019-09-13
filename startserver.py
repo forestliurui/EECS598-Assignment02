@@ -2,8 +2,6 @@
 A simple script to start tensorflow servers with different roles.
 """
 import os
-os.environ.pop('http_proxy')
-os.environ.pop('https_proxy')
 
 import tensorflow as tf
 
