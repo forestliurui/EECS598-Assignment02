@@ -122,7 +122,8 @@ def read_label_file(dataset_dir, filename=LABELS_FILENAME):
       A map from a label (integer) to class name.
     """
     labels_filename = os.path.join(dataset_dir, filename)
-    with tf.gfile.Open(labels_filename, 'r') as f:
+    with tf.gfile.Open(labels_filename, 'rb') as f:
+        #import pdb;pdb.set_trace()
         lines = f.read().decode()
     lines = lines.split('\n')
     lines = filter(None, lines)

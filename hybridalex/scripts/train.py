@@ -22,6 +22,10 @@ net_configs = {
     '1dev': (attrgetter('original'),
              ['/job:worker/task:0'],
              'grpc://localhost:2222', 1, 96),
+    '1dev-2proc': (attrgetter('ndev_data'),
+            ['/job:worker/task:0', '/job:worker/task:1', '/job:ps/task:0'],
+            'grpc://localhost:2222',
+            2, 48),
     '2dev-data': (attrgetter('ndev_data'),
                   ['/job:worker/task:0', '/job:worker/task:1',
                    '/job:ps/task:0'],
@@ -223,7 +227,7 @@ if __name__ == '__main__':
                         choices=['alexnet', 'vgg'],
                         default='alexnet')
     parser.add_argument("--mode", help='the name of the parallel method',
-                        choices=['1dev', '2dev-data', '4dev-data'],
+                        choices=['1dev', '1dev-2proc', '2dev-data', '4dev-data'],
                         default='1dev')
     parser.add_argument("--work_dir",
                         help='directory for saving files, defaults to /tmp/workspace/tflogs',
